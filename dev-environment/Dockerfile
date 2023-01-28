@@ -1,11 +1,15 @@
 FROM python:3.10-slim
 
+# create user
+RUN adduser --disabled-password --gecos "" appuser
+USER appuser
+
 # set the working directory
-WORKDIR /code
+WORKDIR /home/appuser
 
 # install dependencies
 COPY ./requirements.txt ./
-RUN pip install --no-cache-dir --upgrade -r requirements.txt
+RUN pip install --user --no-cache-dir --upgrade -r requirements.txt
 
 # copy the src to the folder
 COPY ./src ./src
