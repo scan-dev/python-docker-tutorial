@@ -11,7 +11,9 @@ Work in progress
 7. Debug Python code inside a container
 
 ## 1. Why Docker?
+
 Python versions, more than just a virtual env, ...
+
 ## 2. Dockerize an app
 
 ```Dockerfile
@@ -32,6 +34,7 @@ docker build -t fastapi-image .
 docker run --name fastapi-container -p 80:80 fastapi-image
 docker run -d --name fastapi-container -p 80:80 fastapi-image
 ```
+
 ## 3. Immediate file changes (volumes)
 
 ```console
@@ -41,7 +44,9 @@ docker run -d --name fastapi-container -p 80:80 fastapi-image
 
  docker run -d --name fastapi-container -p 80:80 -v $(pwd):/code fastapi-image
  ```
+
 ## 4. Use IDE in Docker
+
 ## 5. Docker Compose
 
 ```yml
@@ -76,6 +81,7 @@ services:
   redis:
     image: redis:alpine
 ```
+
 ## 7. Debug Python code inside a container
 
 Add this in the code
@@ -102,7 +108,7 @@ services:
 
 Attach to running container
 
- ## Try a Python version easily with Docker
+## Try a Python version easily with Docker
 
 ```console
  docker pull python:3.11-slim
@@ -110,13 +116,12 @@ Attach to running container
  docker exec -it python_dev /bin/sh
 ```
 
-## Further Resources:
+## Further Resources
 
-- https://towardsdatascience.com/debugging-for-dockerized-ml-applications-in-python-2f7dec30573d
-- https://github.com/Wyntuition/try-python-flask-redis-docker-compose
-- https://docs.docker.com/compose/gettingstarted/
-- https://www.docker.com/blog/containerized-python-development-part-1/
-
+- [Debug dockerized app](https://towardsdatascience.com/debugging-for-dockerized-ml-applications-in-python-2f7dec30573d)
+- [Try docker-compose](https://github.com/Wyntuition/try-python-flask-redis-docker-compose)
+- [Getting started](https://docs.docker.com/compose/gettingstarted/)
+- [Python development containerized - pt1](https://www.docker.com/blog/containerized-python-development-part-1/)
 
 ## Other commands for cleaning up
 
