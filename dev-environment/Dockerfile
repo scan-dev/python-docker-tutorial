@@ -1,5 +1,9 @@
 FROM python:3.10-slim
 
+#update PATH
+ENV PATH="/home/appuser/.local/bin:$PATH"
+RUN echo $PATH
+
 # create user
 RUN adduser --disabled-password --gecos "" appuser
 USER appuser
